@@ -1,0 +1,22 @@
+<%= form_with(model: article_attribute) do |form| %>
+  <% if article_attribute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article_attribute.errors.count, "error") %> prohibited this article_attribute from being saved:</h2>
+
+      <ul>
+        <% article_attribute.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
